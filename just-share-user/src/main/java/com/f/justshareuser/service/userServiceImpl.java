@@ -1,5 +1,6 @@
 package com.f.justshareuser.service;
 
+import com.f.justsharecommon.util.RedisUtil;
 import com.f.justshareuser.entity.User;
 import com.f.justshareuser.jwt.JwtUtil;
 import com.f.justshareuser.mapper.UserMapper;
@@ -20,6 +21,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class userServiceImpl implements UserService {
     private final UserMapper userMapper;
+    private final RedisUtil redisUtil;
 
 
     public Map<String, String> login(User record) {
@@ -31,6 +33,7 @@ public class userServiceImpl implements UserService {
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role);
         String token = JwtUtil.generateToken(record.getAccount(), claims);
+        redisUtil.set(record.getAccount()+"token", token);
 
         return Maps.of("token", token).build();
     }

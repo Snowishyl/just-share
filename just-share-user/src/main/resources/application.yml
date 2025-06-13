@@ -1,6 +1,12 @@
 server:
   port: 8085
 spring:
+  data:
+    redis:
+      host: 192.168.142.129
+      port: 6379
+      password: feiwoscun  # 如果没有密码可以不写
+      database: 0
   application:
     name: just-share-user
   datasource:
