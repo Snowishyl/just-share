@@ -1,0 +1,39 @@
+package com.f.justshareuser.service;
+
+import com.f.justshareuser.entity.User;
+import com.f.justshareuser.jwt.JwtUtil;
+import com.f.justshareuser.mapper.UserMapper;
+import io.jsonwebtoken.lang.Maps;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @Author: feiwoscun
+ * @Date: 2025/6/13
+ * @Description:
+ */
+@Service
+@RequiredArgsConstructor
+public class userServiceImpl implements UserService {
+    private final UserMapper userMapper;
+
+
+    public Map<String, String> login(User record) {
+        Integer exist = userMapper.selectAccount(record.getAccount());
+        if (exist == null || exist == 0) {
+            throw new IllegalArgumentException("该用户还没有注册~");
+        }
+        Byte role = record.getRole();
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("role", role);
+        String token = JwtUtil.generateToken(record.getAccount(), claims);
+
+        return Maps.of("token", token).build();
+    }
+
+
+}
