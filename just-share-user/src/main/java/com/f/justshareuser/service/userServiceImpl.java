@@ -1,12 +1,11 @@
 package com.f.justshareuser.service;
 
 import com.f.justsharecommon.util.RedisUtil;
-import com.f.justshareuser.entity.User;
+import com.f.justsharecommon.entity.User;
 import com.f.justshareuser.jwt.JwtUtil;
 import com.f.justshareuser.mapper.UserMapper;
 import io.jsonwebtoken.lang.Maps;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -29,6 +28,7 @@ public class userServiceImpl implements UserService {
         if (exist == null || exist == 0) {
             throw new IllegalArgumentException("该用户还没有注册~");
         }
+
         Byte role = record.getRole();
         Map<String, Object> claims = new HashMap<>();
         claims.put("role", role);
