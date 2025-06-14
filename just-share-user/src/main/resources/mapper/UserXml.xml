@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.f.justshareuser.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.f.justsharecommon.entity.User">
+    <!--@mbg.generated-->
+    <!--@Table `user`-->
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="role" jdbcType="TINYINT" property="role" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="INTEGER" property="updateTime" />
+    <result column="avator_addr" jdbcType="INTEGER" property="avatorAddr" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="tel" jdbcType="INTEGER" property="tel" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, nickname, `role`, gender, create_time, update_time, avator_addr, age, tel
+  </sql>
+  <insert id="insert" parameterType="com.f.justsharecommon.entity.User">
+    <!--@mbg.generated-->
+    insert into `user` (id, nickname, `role`, 
+      gender, create_time, update_time, 
+      avator_addr, age, tel
+      )
+    values (#{id,jdbcType=BIGINT}, #{nickname,jdbcType=VARCHAR}, #{role,jdbcType=TINYINT}, 
+      #{gender,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=INTEGER}, 
+      #{avatorAddr,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{tel,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.f.justsharecommon.entity.User">
+    <!--@mbg.generated-->
+    insert into `user`
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="role != null">
+        `role`,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="avatorAddr != null">
+        avator_addr,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="tel != null">
+        tel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="role != null">
+        #{role,jdbcType=TINYINT},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=TINYINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=INTEGER},
+      </if>
+      <if test="avatorAddr != null">
+        #{avatorAddr,jdbcType=INTEGER},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="tel != null">
+        #{tel,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectAccount" resultType="integer">
+    select count(1) from user where account = #{account}
+  </select>
+</mapper>
