@@ -35,6 +35,32 @@
             <groupId>com.f</groupId>
             <artifactId>just-share-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.f</groupId>
+            <artifactId>just-share-localmsg</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.f</groupId>
+            <artifactId>minio-starter</artifactId>
+        </dependency>
+        <!--数据库操作-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

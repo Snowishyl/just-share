@@ -6,7 +6,6 @@
         <groupId>com.f</groupId>
         <artifactId>just-share-minio</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.f</groupId>
     <artifactId>minio-configuration</artifactId>
@@ -20,7 +19,6 @@
         <dependency>
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
-            <version>8.5.7</version> <!-- 或其他版本 -->
         </dependency>
 <!--        <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,12 +29,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>3.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.f</groupId>
+            <artifactId>just-share-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

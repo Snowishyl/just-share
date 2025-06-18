@@ -1,7 +1,7 @@
 package com.f.content.controller;
 
 import com.f.content.domain.UserPublishContent;
-import com.f.content.service.PublishStrategyFactory;
+import com.f.content.factory.PublishStrategyFactory;
 import com.f.justsharecommon.domain.Content;
 import com.f.content.rules.CheckFilter;
 import com.f.content.rules.ContentCheckRule;
@@ -41,6 +41,6 @@ public class ContentController {
             return CommonResult.failed();
         }
 
-
+        return CommonResult.success("");
     }
 }

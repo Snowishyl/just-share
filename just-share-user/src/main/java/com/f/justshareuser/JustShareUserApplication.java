@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.f.justshareuser.mapper")
+@MapperScan(basePackages = "com.f")
 @ComponentScan("com.f")
 public class JustShareUserApplication {
 

@@ -1,4 +1,4 @@
-package com.f.content.service;
+package com.f.content.factory;
 
 import com.f.content.domain.UserPublishContent;
 import com.f.content.event.DirectPublishEvent;

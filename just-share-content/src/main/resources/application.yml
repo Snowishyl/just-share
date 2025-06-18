@@ -1,0 +1,40 @@
+server:
+  port: 8085
+spring:
+  data:
+    redis:
+      host: 192.168.142.129
+      port: 6379
+      password: feiwoscun
+      database: 0
+  application:
+    name: just-share-content
+  datasource:
+    url: jdbc:mysql://192.168.142.129:3306/feiwoscun?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: feiwoscun
+    druid:
+      initial-size: 5
+      min-idle: 10
+      max-active: 20
+      web-stat-filter:
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      stat-view-servlet:
+        login-username: druid
+        login-password: druid
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.f.content.domain.entity
+
+minio:
+  endpoint: http://192.168.142.129:9000
+  access-key: feiwoscun
+  secret-key: feiwoscun
+  bucket: test
+
+

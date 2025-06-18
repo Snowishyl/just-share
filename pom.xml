@@ -82,11 +82,21 @@
                 <artifactId>just-share-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>com.f</groupId>
+                <artifactId>just-share-localmsg</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
                 <!--redis-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-redis</artifactId>
                 <version>${spring-boot-starter-data-redis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.f</groupId>
+                <artifactId>minio-starter</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

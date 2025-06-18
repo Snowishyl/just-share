@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/just-share-common/.gitattributes
+/just-share-content/.gitattributes

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.f.content.mapper.UserShareAtMapper">
+  <resultMap id="BaseResultMap" type="com.f.content.domain.entity.UserShareAt">
+    <!--@mbg.generated-->
+    <!--@Table user_share_at-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="comment_id" jdbcType="BIGINT" property="commentId" />
+    <result column="content_id" jdbcType="BIGINT" property="contentId" />
+    <result column="user_at_id" jdbcType="BIGINT" property="userAtId" />
+    <result column="user_ated_id" jdbcType="INTEGER" property="userAtedId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="if_check" jdbcType="BOOLEAN" property="ifCheck" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, comment_id, content_id, user_at_id, user_ated_id, create_time, update_time, if_check
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from user_share_at
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from user_share_at
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.f.content.domain.entity.UserShareAt" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_share_at (comment_id, content_id, user_at_id, 
+      user_ated_id, create_time, update_time, 
+      if_check)
+    values (#{commentId,jdbcType=BIGINT}, #{contentId,jdbcType=BIGINT}, #{userAtId,jdbcType=BIGINT}, 
+      #{userAtedId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{ifCheck,jdbcType=BOOLEAN})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.f.content.domain.entity.UserShareAt" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into user_share_at
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commentId != null">
+        comment_id,
+      </if>
+      <if test="contentId != null">
+        content_id,
+      </if>
+      <if test="userAtId != null">
+        user_at_id,
+      </if>
+      <if test="userAtedId != null">
+        user_ated_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="ifCheck != null">
+        if_check,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commentId != null">
+        #{commentId,jdbcType=BIGINT},
+      </if>
+      <if test="contentId != null">
+        #{contentId,jdbcType=BIGINT},
+      </if>
+      <if test="userAtId != null">
+        #{userAtId,jdbcType=BIGINT},
+      </if>
+      <if test="userAtedId != null">
+        #{userAtedId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ifCheck != null">
+        #{ifCheck,jdbcType=BOOLEAN},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.f.content.domain.entity.UserShareAt">
+    <!--@mbg.generated-->
+    update user_share_at
+    <set>
+      <if test="commentId != null">
+        comment_id = #{commentId,jdbcType=BIGINT},
+      </if>
+      <if test="contentId != null">
+        content_id = #{contentId,jdbcType=BIGINT},
+      </if>
+      <if test="userAtId != null">
+        user_at_id = #{userAtId,jdbcType=BIGINT},
+      </if>
+      <if test="userAtedId != null">
+        user_ated_id = #{userAtedId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ifCheck != null">
+        if_check = #{ifCheck,jdbcType=BOOLEAN},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.f.content.domain.entity.UserShareAt">
+    <!--@mbg.generated-->
+    update user_share_at
+    set comment_id = #{commentId,jdbcType=BIGINT},
+      content_id = #{contentId,jdbcType=BIGINT},
+      user_at_id = #{userAtId,jdbcType=BIGINT},
+      user_ated_id = #{userAtedId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      if_check = #{ifCheck,jdbcType=BOOLEAN}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

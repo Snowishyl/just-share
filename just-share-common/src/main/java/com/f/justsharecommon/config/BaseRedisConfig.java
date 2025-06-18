@@ -1,5 +1,6 @@
-package com.f.justsharecommon.util;
+package com.f.justsharecommon.config;
 
+import com.f.justsharecommon.util.RedisUtil;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,7 +21,6 @@ import java.time.Duration;
 
 /**
  * Redis基础配置
- * Created by macro on 2020/6/19.
  */
 @Configuration
 public class BaseRedisConfig {

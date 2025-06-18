@@ -15,12 +15,13 @@ import java.sql.Date;
  * @Description:
  */
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class ScheduledTasks {
-
-    private Byte rule;
+    /**
+     * 是否延时发布，1true，0false
+     */
+    private boolean closeAble;
     /**
      * 发布时间
      */
@@ -28,4 +29,7 @@ public class ScheduledTasks {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
+    public boolean getCloseAble() {
+        return this.closeAble;
+    }
 }

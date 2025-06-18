@@ -34,4 +34,8 @@ public class Content {
      * 定时发布
      */
     private ScheduledTasks taskInfo;
+    /**
+     * 文章id 唯一
+     */
+    private long  contentId;
 }

@@ -12,7 +12,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>just-share-minio</name>
     <description>just-share-minio</description>
-    <packaging>pom</packaging>
+<packaging>pom</packaging>
     <properties>
         <lombok.version>1.18.38</lombok.version>
         <java.version>17</java.version>
@@ -21,11 +21,16 @@
         <spring-boot-configuration-processor.version>3.5.0</spring-boot-configuration-processor.version>
     </properties>
     <modules>
-       <!-- <module>minio-configuration</module>-->
+        <module>minio-configuration</module>
         <module>minio-starter</module>
     </modules>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.f</groupId>
+                <artifactId>just-share-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -33,27 +38,36 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter</artifactId>
-                <version>${spring-boot-starter.version}</version>
-            </dependency>
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-configuration-processor</artifactId>
-                <version>${spring-boot-configuration-processor.version}</version>
+                <groupId>com.f</groupId>
+                <artifactId>minio-configuration</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure</artifactId>
-                <version>${spring-boot-autoconfigure.version}</version>
-            </dependency>-->
+            <!--            <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-starter</artifactId>
+                            <version>${spring-boot-starter.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                            <version>${spring-boot-configuration-processor.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-autoconfigure</artifactId>
+                            <version>${spring-boot-autoconfigure.version}</version>
+                        </dependency>-->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>8.5.7</version> <!-- 或其他版本 -->
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
