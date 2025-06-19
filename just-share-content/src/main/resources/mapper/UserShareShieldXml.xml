@@ -33,6 +33,21 @@
     values (#{userId,jdbcType=BIGINT}, #{shieldUserId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTimer,jdbcType=TIMESTAMP})
   </insert>
+  <insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO user_share_shield (
+    user_id, shield_user_id, create_time, update_timer
+    )
+    VALUES
+    <foreach collection="list" item="item" separator=",">
+      (
+      #{item.userId, jdbcType=BIGINT},
+      #{item.shieldUserId, jdbcType=BIGINT},
+      #{item.createTime, jdbcType=TIMESTAMP},
+      #{item.updateTimer, jdbcType=TIMESTAMP}
+      )
+    </foreach>
+  </insert>
+
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.f.content.domain.entity.UserShareShield" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into user_share_shield

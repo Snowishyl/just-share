@@ -21,4 +21,5 @@ import java.util.List;
 public class UserPublishContent {
     private Content content;
     private List<MultipartFile> files;
+    private  String localMsgId;
 }

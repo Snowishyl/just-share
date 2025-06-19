@@ -3,13 +3,14 @@ package com.f.minioconfiguration.minio;
 import com.f.justsharecommon.util.SnowflakeIdWorker;
 import io.minio.*;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Slf4j
 public class MinioService {
 
     private final MinioClient minioClient;
@@ -65,6 +66,7 @@ public class MinioService {
 
                 // 拼接访问 URL（MinIO 需配置静态访问或网关代理）
                 String fileUrl = String.format("%s/%s/%s", endpoint, bucketName, objectName);
+                log.info("file url 上传成功: {}", fileUrl);
                 urls.add(fileUrl);
 
             } catch (Exception e) {

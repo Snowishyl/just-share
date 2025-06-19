@@ -37,7 +37,7 @@
         </dependency>
         <dependency>
             <groupId>com.f</groupId>
-            <artifactId>just-share-localmsg</artifactId>
+            <artifactId>localmsg-starter</artifactId>
         </dependency>
 
         <dependency>

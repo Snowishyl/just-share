@@ -128,4 +128,24 @@
       if_check = #{ifCheck,jdbcType=BOOLEAN}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <insert id="batchInsert" parameterType="java.util.List">
+    INSERT INTO user_share_at (
+    comment_id, content_id, user_at_id,
+    user_ated_id, create_time, update_time,
+    if_check
+    )
+    VALUES
+    <foreach collection="list" item="item" separator=",">
+      (
+      #{item.commentId, jdbcType=BIGINT},
+      #{item.contentId, jdbcType=BIGINT},
+      #{item.userAtId, jdbcType=BIGINT},
+      #{item.userAtedId, jdbcType=INTEGER},
+      #{item.createTime, jdbcType=TIMESTAMP},
+      #{item.updateTime, jdbcType=TIMESTAMP},
+      #{item.ifCheck, jdbcType=BOOLEAN}
+      )
+    </foreach>
+  </insert>
+
 </mapper>

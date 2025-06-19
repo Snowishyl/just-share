@@ -28,7 +28,7 @@ public class UserShareAt {
     /**
     * 被at的人的id
     */
-    private Integer userAtedId;
+    private Long userAtedId;
 
     private Date createTime;
 

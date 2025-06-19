@@ -2,6 +2,8 @@ package com.f.content.mapper;
 
 import com.f.content.domain.entity.UserShareAt;
 
+import java.util.List;
+
 public interface UserShareAtMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,6 @@ public interface UserShareAtMapper {
     int updateByPrimaryKeySelective(UserShareAt record);
 
     int updateByPrimaryKey(UserShareAt record);
+
+    Integer batchInsert(List<UserShareAt> userShareAts);
 }
