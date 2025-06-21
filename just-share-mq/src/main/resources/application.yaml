@@ -1,0 +1,19 @@
+server:
+  port: 8088
+spring:
+  config:
+    import: nacos:just-share-mq
+  application:
+    name: just-share-mq
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.142.129:8848  # Nacos ??
+        namespace: 96c1a343-bc1d-486b-8fb0-a95975bdd17d            # ??? public????????????????ID
+        username: nacos              # ?????????
+        password: nacos
+      config:
+        namespace: 96c1a343-bc1d-486b-8fb0-a95975bdd17d
+        server-addr: 192.168.142.129:8848
+        file-extension: yaml
+

@@ -30,6 +30,11 @@ public class Content {
      * 艾特，可以采用异步通知
      */
     private List<User> Ats;
+
+    /**
+     * 屏蔽用户列表
+     */
+    private List<User> userShields;
     /**
      * 定时发布
      */
