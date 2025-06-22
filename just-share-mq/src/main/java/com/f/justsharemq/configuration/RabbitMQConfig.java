@@ -12,6 +12,9 @@ import java.util.Map;
 
 import static com.f.justsharecommon.config.RabbitConfig.*;
 
+/**
+ * @author feiwoscun
+ */
 @Configuration
 public class RabbitMQConfig {
 

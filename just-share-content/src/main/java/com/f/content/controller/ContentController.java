@@ -2,7 +2,7 @@ package com.f.content.controller;
 
 import com.f.content.domain.UserPublishContent;
 import com.f.content.factory.PublishStrategyFactory;
-import com.f.justsharecommon.domain.Content;
+import com.f.justsharecommon.entity.Content;
 import com.f.content.rules.CheckFilter;
 import com.f.content.rules.ContentCheckRule;
 import com.f.justsharecommon.api.CommonResult;

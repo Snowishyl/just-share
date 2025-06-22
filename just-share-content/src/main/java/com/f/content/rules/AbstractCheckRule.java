@@ -1,6 +1,6 @@
 package com.f.content.rules;
 
-import com.f.justsharecommon.domain.Content;
+import com.f.justsharecommon.entity.Content;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 

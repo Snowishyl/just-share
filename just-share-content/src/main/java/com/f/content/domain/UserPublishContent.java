@@ -1,6 +1,6 @@
 package com.f.content.domain;
 
-import com.f.justsharecommon.domain.Content;
+import com.f.justsharecommon.entity.Content;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

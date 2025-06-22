@@ -1,9 +1,8 @@
 package com.f.content.event.listener;
 
-import com.f.content.mq.RabbitMessageSender;
 import com.f.justsharecommon.entity.dto.PublishScheduledTimeDTO;
 import com.f.content.domain.UserPublishContent;
-import com.f.content.domain.entity.UserShare;
+import com.f.justsharecommon.entity.UserShare;
 import com.f.content.domain.entity.UserShareAt;
 import com.f.content.domain.entity.UserShareFiles;
 import com.f.content.domain.entity.UserShareShield;
@@ -14,7 +13,7 @@ import com.f.content.mapper.UserShareFilesMapper;
 import com.f.content.mapper.UserShareShieldMapper;
 import com.f.content.service.UserShareService;
 import com.f.justsharecommon.util.SnowflakeIdWorker;
-import com.f.justsharecommon.domain.Content;
+import com.f.justsharecommon.entity.Content;
 import com.f.localmsgstarter.service.LocalMessageService;
 import com.f.minioconfiguration.minio.MinioService;
 import jakarta.annotation.Resource;
@@ -54,7 +53,7 @@ public class UserPublishListener {
 
         Content content = publishContent.getContent();
         //延时发布
-        boolean closeAble = content.getTaskInfo().getCloseAble();
+        boolean closeAble = content.getTaskInfo().getCloseable();
         //发布规则
         Byte publishRule = content.getPublishRule();
         //用户id
@@ -76,6 +75,7 @@ public class UserPublishListener {
                             .contentId(contentId)
                             .scheduledTime(publishTime)
                             .build();
+                    //触发mq发送事件
                     publishStrategyFactory.publishScheduledTime(publishScheduledTimeDTO);
                 }
             });
@@ -83,9 +83,9 @@ public class UserPublishListener {
         UserShare userShare = UserShare.builder()
                 .publishRule(publishRule)
                 .contentId(contentId)
-                .userid(userId)
+                .userId(userId)
                 .scheduledTime(scheduledTime)
-                .closeAble(closeAble)
+                .closeable(closeAble)
                 .build();
         userShareService.insert(userShare);
 

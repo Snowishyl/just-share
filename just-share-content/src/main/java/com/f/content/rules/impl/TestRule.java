@@ -2,7 +2,7 @@ package com.f.content.rules.impl;
 
 import com.f.content.rules.AbstractCheckRule;
 import com.f.content.rules.CheckOrder;
-import com.f.justsharecommon.domain.Content;
+import com.f.justsharecommon.entity.Content;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 

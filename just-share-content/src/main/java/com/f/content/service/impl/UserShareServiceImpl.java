@@ -1,6 +1,6 @@
 package com.f.content.service.impl;
 
-import com.f.content.domain.entity.UserShare;
+import com.f.justsharecommon.entity.UserShare;
 import com.f.content.mapper.UserShareMapper;
 import com.f.content.service.UserShareService;
 import lombok.RequiredArgsConstructor;

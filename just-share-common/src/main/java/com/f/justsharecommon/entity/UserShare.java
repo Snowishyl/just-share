@@ -1,4 +1,4 @@
-package com.f.content.domain.entity;
+package com.f.justsharecommon.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class UserShare {
 
     private Byte publishRule;
 
-    private Long userid;
+    private Long userId;
 
     private Date createTime;
 
@@ -32,5 +32,5 @@ public class UserShare {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     Date scheduledTime;
-    private Boolean closeAble;
+    private Boolean closeable;
 }

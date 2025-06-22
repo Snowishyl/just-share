@@ -1,6 +1,5 @@
-package com.f.justsharecommon.domain;
+package com.f.justsharecommon.entity;
 
-import com.f.justsharecommon.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

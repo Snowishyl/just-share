@@ -1,8 +1,7 @@
-package com.f.justsharecommon.domain;
+package com.f.justsharecommon.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,7 +20,7 @@ public class ScheduledTasks {
     /**
      * 是否延时发布，1true，0false
      */
-    private boolean closeAble;
+    private boolean closeable;
     /**
      * 发布时间
      */
@@ -29,7 +28,7 @@ public class ScheduledTasks {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
-    public boolean getCloseAble() {
-        return this.closeAble;
+    public boolean getCloseable() {
+        return this.closeable;
     }
 }

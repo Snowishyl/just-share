@@ -1,6 +1,6 @@
 package com.f.content.mapper;
 
-import com.f.content.domain.entity.UserShare;
+import com.f.justsharecommon.entity.UserShare;
 import org.springframework.stereotype.Repository;
 
 @Repository
